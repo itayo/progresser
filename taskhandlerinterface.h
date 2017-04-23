@@ -7,6 +7,7 @@ class taskHandlerInterface
 public:
     taskHandlerInterface();
     virtual void run()=0;
+    virtual void runOne()=0;
     virtual void addTask()=0;
 
 };

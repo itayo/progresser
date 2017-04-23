@@ -7,9 +7,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     worker = new task();
+    qDebug() << "Worker" << QThread::currentThreadId();
     //QObject::connect(worker, &SIGNAL(tick(void)), this, SLOT(tick(void)));
     //QObject::connect(&this, &MainWindow::startRun,worker,task::setMax);
-    QObject::connect(worker, SIGNAL(tick(void)),this, SLOT(tick(void)), Qt::DirectConnection);
+    QObject::connect(worker, SIGNAL(tick(void)),this, SLOT(tick(void)), Qt::QueuedConnection);
     QObject::connect(this, SIGNAL(startRun(int)),worker, SLOT(startCount(int)), Qt::DirectConnection);
     worker->start();
 }

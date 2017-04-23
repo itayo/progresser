@@ -8,7 +8,12 @@ task::task()
 
 void task::run()
 {
-      m_Th->run();
+    //.arg( QString::number( (quint64)QThread::currentThreadId(), 16 ), 12 );
+    while(true)
+    {
+        m_Th->runOne();
+        qApp->processEvents();
+    }
 
 }
 void task::callback()

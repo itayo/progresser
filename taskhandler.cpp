@@ -25,3 +25,12 @@ void taskHandler::addTask()
     taskCountUp *task=new taskCountUp(m_Cb);
     m_Queue.push_back(task);
 }
+
+void taskHandler::runOne()
+{
+    while(m_Queue.size() >0)
+    {
+        m_Queue.front()->run();
+        m_Queue.pop_front();
+    }
+}

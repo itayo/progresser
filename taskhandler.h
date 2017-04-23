@@ -13,6 +13,7 @@ public:
     taskHandler(std::function<void()> cb);
     virtual void run();
     virtual void addTask();
+    virtual void runOne();
 private:
     std::function<void()> m_Cb;
     std::deque<taskBase*> m_Queue;

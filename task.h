@@ -3,12 +3,14 @@
 #include <QThread>
 #include <QMutex>
 #include <QDebug>
+#include <QApplication>
 #include <deque>
 #include <functional>
 #include <taskhandlerinterface.h>
 #include <taskhandler.h>
 #include <taskbase.h>
 #include <taskcountup.h>
+
 
 
 
